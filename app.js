@@ -1,0 +1,62 @@
+var elements=[];
+window.onload = function(){
+    if(JSON.parse(localStorage.getItem("todo-elements"))!=null){
+        elements=JSON.parse(localStorage.getItem("todo-elements"));
+    
+    console.log(elements);
+    display(elements);}
+    }
+function addElement(){
+    if(document.querySelector(".addTxt").value.trim() !=""){
+        
+        elements.push(document.querySelector(".addTxt").value.trim());
+       if(localStorage.getItem("todo-elements")==null){
+           localStorage.setItem("todo-elements",JSON.stringify(elements));
+       }
+       else{
+        localStorage.setItem("todo-elements",JSON.stringify(elements));
+       }
+        display(elements);
+        document.getElementById("addText").value = ''
+    }
+}
+
+function display(elements){
+    console.log(elements)
+    document.querySelector(".list").innerHTML="";
+    for(var i=0;i<elements.length;i++){
+        document.querySelector(".list").innerHTML += "<center><div class='element' >"+elements[i]+"<img class='tick'  src='https://thumbs.dreamstime.com/b/tick-button-38262192.jpg' onclick='strike("+i+")'> <img class='dustbin' src='https://helpdeskgeek.com/wp-content/pictures/2019/08/delete-1024x682.png' onclick='del("+i+")'></div></center>";
+    }
+}
+
+function del(index){
+    console.log('Del exec')
+    elements.splice(index,1);
+    if(localStorage.getItem("todo-elements")==null){
+        localStorage.setItem("todo-elements",JSON.stringify(elements));
+    }
+    else{
+     localStorage.setItem("todo-elements",JSON.stringify(elements));
+    }
+    display(elements);
+   
+}
+
+function strike(index){
+    console.log(index)
+    if(elements[index].includes("<strike>"))
+    {  
+      elements[index]=elements[index].replace("<strike>","");
+    }
+    else{
+        elements[index]=elements[index].strike();
+       
+    }
+    if(localStorage.getItem("todo-elements")==null){
+        localStorage.setItem("todo-elements",JSON.stringify(elements));
+    }
+    else{
+     localStorage.setItem("todo-elements",JSON.stringify(elements));
+    }
+    display(elements);
+}

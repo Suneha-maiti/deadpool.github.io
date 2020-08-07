@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+body{
+    background: url(./dead.jpg);
+    height: 500px;
+    margin: 500px;
+}
+
+.container {
+    position: absolute;
+    
+    height: 25pc;
+    width: 20pc;
+    margin: auto;
+    top: 0; right: 0; left: 0; bottom: 0;
+    
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 55px black;
+    
+}
+
+.addTxt {
+    position: absolute;
+    height: 5px;
+    width: 60%;
+    margin: auto;
+    top: 25px; right: 0; left: 0;
+    outline: none;
+    border: none;
+    padding: 20px;
+    padding-right: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.addbtn {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 15px; right: 35px; cursor: pointer;
+    background: transparent;
+    outline: none;
+    border: 0;
+}
+
+.addbtn img{
+    position: absolute;
+    height: 40px;
+    margin: auto;
+    margin-right: -75px;
+    top: 25px;right: 70px; left: 0; bottom: 0;
+    
+}
+
+.list {
+    position: absolute;
+    height: 74%;
+    width:100%;
+    right: 0; left: 0; bottom: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+}
+
+.list::-webkit-scrollbar{
+    -webkit-appearance: none;
+    appearance: none;    
+}
+
+.element {
+    position: relative;
+    height: fit-content;
+    width:55%;
+    right: 0;
+    margin: 15px;
+    text-align: left;
+    text-decoration-color: black;
+    transition: 0.2s;
+    padding: 10px;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 2px;
+    padding-right: 80px;
+    word-wrap: break-word;
+    font-family: "Roboto", sans-serif;
+    
+}
+
+.element:hover{
+    transform:scale(1.1);
+    
+}
+
+.tick {
+    position: absolute;
+    margin: auto;
+    height: 20px;
+    
+    top: 0;
+    bottom: 0;right: 50px;
+}
+
+.dustbin {
+    position: absolute;
+    margin: auto;
+    height: 20px;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+    filter: grayscale(1);
+
+}
